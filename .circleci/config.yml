@@ -1,0 +1,31 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@0.1.15
+
+commands:
+  publish:
+    steps:
+      - checkout
+      - aws-cli/install
+      - aws-cli/configure
+      - run: ./publish.sh
+
+jobs:
+  us_east_1:
+    executor: aws-cli/default
+    environment:
+      TARGET_REGION: us-east-1
+    steps:
+      - publish
+
+workflows:
+  version: 2
+  publish:
+    jobs:
+      - us_east_1:
+          context: java-lambda-layer
+          filters:
+            branches:
+              only:
+                - master
