@@ -13,6 +13,10 @@ ARN" and enter the following ARN.
 arn:aws:lambda:us-east-1:764866452798:layer:java:1
 ```
 
+## Where it can be used?
+
+This layer was initially designed for [Apache Tika Lambda layer](https://github.com/shelfio/apache-tika-lambda-layer) to run on Node.js 12.x runtime, but you can use it for any other purpose you want.
+
 ## What is the executable path to Java inside of Lambda when I attached the layer?
 
 You can find it at `/opt/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.lambda2.0.1.x86_64/jre/bin/java` (`opt` is a location where lambda unpacks layers).
