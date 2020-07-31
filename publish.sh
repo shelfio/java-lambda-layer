@@ -2,14 +2,14 @@
 
 LAYER_NAME='java'
 LAYER_VERSION=1
-BUCKET_NAME=shelf-java-lambda-layer-"$TARGET_REGION"
+BUCKET_NAME=shelf-lambda-layers-"$TARGET_REGION"
 
-aws s3 cp ./java.zip s3://"$BUCKET_NAME"/layer.zip
+aws s3 cp ./java.zip s3://"$BUCKET_NAME"/java.zip
 
 LAYER_VERSION=$(
   aws lambda publish-layer-version --region "$TARGET_REGION" \
     --layer-name $LAYER_NAME \
-    --content S3Bucket="$BUCKET_NAME",S3Key=layer.zip \
+    --content S3Bucket="$BUCKET_NAME",S3Key=java.zip \
     --description "Java 8" \
     --query Version \
     --output text
