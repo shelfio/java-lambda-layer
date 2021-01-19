@@ -19,7 +19,7 @@ This layer was initially designed for [Apache Tika Lambda layer](https://github.
 
 ## What is the executable path to Java inside of Lambda when I attached the layer?
 
-You can find it at `/opt/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.lambda2.0.1.x86_64/jre/bin/java` (`opt` is a location where lambda unpacks layers).
+You can find it at `/opt/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.lambda2.0.1.x86_64/jre/bin/java` (`/opt` is a location where lambda unpacks layers).
 
 ## Available regions
 
